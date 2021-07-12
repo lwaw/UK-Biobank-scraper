@@ -22,6 +22,7 @@
   * Dates (dictionary)
     * Debut date
     * Version date
+  * Cost tier
   * Categories (list (dictionaries))
   * Related data field (dictionaries (list))
   * Resources (dicionary)
