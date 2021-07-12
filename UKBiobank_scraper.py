@@ -65,6 +65,7 @@ def build_data_dict(html, column):
         "sexed": get_sexed(html, column),
         "instances": get_instances(html, column),
         "dates": get_dates(html, column),
+        "cost_tier": get_cost_tier(html, column),
         "categories": get_categories(html, column),
         "related_data_fields": get_related_data_fields(html, column),
         "resources": get_resources(html, column),
@@ -299,6 +300,23 @@ def get_dates(html, column):
     }
     
     return date_dict
+
+def get_cost_tier(html, column): 
+    try:
+        pattern = '>Cost Tier</a></td><td class="txt_blu">.*?</td>'
+        
+        match_results = re.search(pattern, html, re.IGNORECASE)
+       
+        item_count = match_results.group()
+        item_count = re.sub('>Cost Tier</a></td><td class="txt_blu">', "", item_count)
+        item_count = re.sub('</td>', "", item_count)
+        
+        item_count = item_count.strip()
+    except:
+         error_report.append("Could not search for pattern cost tier in html file: " + column)
+         item_count = ""   
+        
+    return item_count
 
 def get_categories(html, column):   
     category_dict = {}

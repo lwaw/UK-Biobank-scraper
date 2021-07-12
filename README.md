@@ -1,6 +1,6 @@
 # UK Biobank scraper
 
-  A script that will download meta-data from the UK Biobank website (https://www.ukbiobank.ac.u).
+  A script that will download meta-data from the UK Biobank website (https://www.ukbiobank.ac.uk).
 
 ## Description
 
